@@ -84,11 +84,6 @@ class Header extends Component {
                   History
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link active" to="/reminders" style={headerStyles.navLink}>
-                  Reminders
-                </Link>
-              </li>
             </ul>
             {this.props.searchBar ? (
               <form className="d-flex" role="search" onSubmit={(e) => e.preventDefault()}>
