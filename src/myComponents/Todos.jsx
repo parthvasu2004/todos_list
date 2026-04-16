@@ -9,7 +9,7 @@ const todosStyles = {
     backgroundColor: "rgba(0,0,0,0.4)",
     borderRadius: "10px",
     boxShadow: "0 0 15px rgba(255,69,0,0.6)",
-    // marginBottom: "80px"
+    marginBottom: "250px"
   },
   heading: {
     textAlign: "center",
@@ -27,7 +27,7 @@ const todosStyles = {
 
 class Todos extends Component {
   render() {
-    const { todos, onDelete } = this.props;
+    const { todos, onDelete, onEdit } = this.props;
     return (
       <div style={todosStyles.container}>
         <h3 style={todosStyles.heading}>Todos List</h3>
@@ -40,12 +40,10 @@ class Todos extends Component {
               todo={todo}
               onDelete={onDelete}
               serial={index + 1}
+              onEdit={onEdit}
             />
           ))
         )}
-        <h3 style={todosStyles.heading}>Todos List</h3>
-        <h3 style={todosStyles.heading}>Todos List</h3>
-        <h3 style={todosStyles.heading}>Todos List</h3>
       </div>
     );
   }

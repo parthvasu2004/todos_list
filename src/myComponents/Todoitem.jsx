@@ -31,22 +31,57 @@ const todoItemStyles = {
     padding: "8px 15px",
     borderRadius: "5px",
     cursor: "pointer",
+    transition: "transform 0.2s ease-in-out",
+    marginRight: "10px"
+  },
+  editButton: {
+    backgroundColor: "orange",
+    color: "black",
+    border: "none",
+    padding: "8px 15px",
+    borderRadius: "5px",
+    cursor: "pointer",
     transition: "transform 0.2s ease-in-out"
   },
   buttonHover: {
     transform: "scale(1.05)"
+  },
+  input: {
+    backgroundColor: "rgba(255,255,255,0.1)",
+    border: "1px solid orange",
+    color: "white",
+    padding: "5px",
+    borderRadius: "5px",
+    marginBottom: "10px",
+    width: "100%"
   }
 };
 
 class TodoItem extends Component {
   state = {
     isHovered: false,
-    buttonHovered: false
+    buttonHovered: false,
+    editMode: false,
+    editTitle: this.props.todo.title,
+    editDesc: this.props.todo.desc
+  };
+
+  handleEditToggle = () => {
+    this.setState({ editMode: !this.state.editMode });
+  };
+
+  handleSave = () => {
+    const { todo, onEdit } = this.props;
+    const { editTitle, editDesc } = this.state;
+    if (onEdit) {
+      onEdit(todo, editTitle, editDesc);
+    }
+    this.setState({ editMode: false });
   };
 
   render() {
-    const { todo, onDelete, serial } = this.props;
-    const { isHovered, buttonHovered } = this.state;
+    const { todo, onDelete, serial, onEdit } = this.props;
+    const { isHovered, buttonHovered, editMode, editTitle, editDesc } = this.state;
 
     return (
       <div
@@ -57,21 +92,60 @@ class TodoItem extends Component {
         onMouseEnter={() => this.setState({ isHovered: true })}
         onMouseLeave={() => this.setState({ isHovered: false })}
       >
-        <h4 style={todoItemStyles.title}>
-          {serial}. {todo.title}
-        </h4>
-        <p style={todoItemStyles.desc}>{todo.desc}</p>
-        <button
-          style={{
-            ...todoItemStyles.button,
-            ...(buttonHovered ? todoItemStyles.buttonHover : {})
-          }}
-          onMouseEnter={() => this.setState({ buttonHovered: true })}
-          onMouseLeave={() => this.setState({ buttonHovered: false })}
-          onClick={() => onDelete(todo)}
-        >
-          Delete
-        </button>
+        {editMode && onEdit ? (
+          <>
+            <input
+              type="text"
+              value={editTitle}
+              onChange={(e) => this.setState({ editTitle: e.target.value })}
+              style={todoItemStyles.input}
+            />
+            <input
+              type="text"
+              value={editDesc}
+              onChange={(e) => this.setState({ editDesc: e.target.value })}
+              style={todoItemStyles.input}
+            />
+            <button
+              style={todoItemStyles.editButton}
+              onClick={this.handleSave}
+            >
+              Save
+            </button>
+            <button
+              style={todoItemStyles.button}
+              onClick={this.handleEditToggle}
+            >
+              Cancel
+            </button>
+          </>
+        ) : (
+          <>
+            <h4 style={todoItemStyles.title}>
+              {serial}. {todo.title}
+            </h4>
+            <p style={todoItemStyles.desc}>{todo.desc}</p>
+            <button
+              style={{
+                ...todoItemStyles.button,
+                ...(buttonHovered ? todoItemStyles.buttonHover : {})
+              }}
+              onMouseEnter={() => this.setState({ buttonHovered: true })}
+              onMouseLeave={() => this.setState({ buttonHovered: false })}
+              onClick={() => onDelete(todo)}
+            >
+              Delete
+            </button>
+            {onEdit && (
+              <button
+                style={todoItemStyles.editButton}
+                onClick={this.handleEditToggle}
+              >
+                Edit
+              </button>
+            )}
+          </>
+        )}
       </div>
     );
   }

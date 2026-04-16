@@ -11,7 +11,7 @@ import "./App.css";
 const finalStyle = {
   background: "linear-gradient(135deg, #000000, #b31217, #e52d27, #000000)",
   minHeight: "100vh",
-  fontFamily: "Arial, sans-serif",
+  fontFamily: "Monospace",
   color: "white",
 };
 
@@ -54,6 +54,20 @@ class App extends Component {
   this.setState({ allTodos: newAllTodos });
   localStorage.setItem("allTodos", JSON.stringify(newAllTodos));
 };
+
+  onEdit = (todo, newTitle, newDesc) => {
+  const updatedTodos = this.state.todos.map((t) =>
+    t === todo ? { ...t, title: newTitle, desc: newDesc } : t
+  );
+  const updatedAllTodos = this.state.allTodos.map((t) =>
+    t === todo ? { ...t, title: newTitle, desc: newDesc } : t
+  );
+
+  this.setState({ todos: updatedTodos, allTodos: updatedAllTodos });
+  localStorage.setItem("todos", JSON.stringify(updatedTodos));
+  localStorage.setItem("allTodos", JSON.stringify(updatedAllTodos));
+};
+
 
   AddTodo = (title, desc) => {
     let sno;
@@ -98,7 +112,7 @@ class App extends Component {
             element={
               <>
                 <AddTodo AddTodo={this.AddTodo} />
-                <Todos todos={filteredTodos} onDelete={this.onDelete} />
+                <Todos todos={filteredTodos} onDelete={this.onDelete} onEdit={this.onEdit} />
               </>
             }
           />

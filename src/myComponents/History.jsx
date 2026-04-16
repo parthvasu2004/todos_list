@@ -7,7 +7,8 @@ const historyStyles = {
     padding: "20px",
     backgroundColor: "rgba(0,0,0,0.4)",
     borderRadius: "10px",
-    boxShadow: "0 0 15px rgba(255,69,0,0.6)"
+    boxShadow: "0 0 15px rgba(255,69,0,0.6)",
+    marginBottom: "600px"
   },
   heading: {
     textAlign: "center",

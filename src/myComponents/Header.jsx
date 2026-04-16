@@ -5,12 +5,11 @@ import { Link } from "react-router-dom";
 // 🎨 Inline style objects
 const headerStyles = {
   nav: {
-    backgroundColor: "rgba(0,0,0,10)",
+    backgroundColor: "rgba(0,0,0,0.85)", // corrected alpha value
     color: "white",
     padding: "15px",
     boxShadow: "0 4px 10px rgba(255,0,0,0.5)",
-    position: "relative",
-    border: "1px solid aquawhite"
+    position: "relative"
   },
   brand: {
     color: "orange",
@@ -44,6 +43,17 @@ const headerStyles = {
     borderRadius: "5px",
     cursor: "pointer",
     transition: "transform 0.2s ease-in-out"
+  },
+  toggler: {
+    backgroundColor: "0 0 15px rgba(255,69,0,0.6)", // subtle white/grey light
+    borderRadius: "6px",
+    padding: "6px",
+    boxShadow: "0 0 8px rgba(255,255,255,0.5)"
+  },
+  togglerIcon: {
+    filter: "invert(1)", // makes Bootstrap hamburger visible on dark background
+    // border: "1px solid grey",
+    borderRadius: "4px"
   }
 };
 
@@ -75,8 +85,12 @@ class Header extends Component {
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            style={headerStyles.toggler}
           >
-            <span className="navbar-toggler-icon"></span>
+            <span
+              className="navbar-toggler-icon"
+              style={headerStyles.togglerIcon}
+            ></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
