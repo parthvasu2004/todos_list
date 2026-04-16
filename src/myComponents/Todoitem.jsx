@@ -41,7 +41,8 @@ const todoItemStyles = {
     padding: "8px 15px",
     borderRadius: "5px",
     cursor: "pointer",
-    transition: "transform 0.2s ease-in-out"
+    transition: "transform 0.2s ease-in-out",
+    marginRight: "7px"
   },
   buttonHover: {
     transform: "scale(1.05)"
