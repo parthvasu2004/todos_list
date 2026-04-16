@@ -12,7 +12,7 @@ const finalStyle = {
   background: "linear-gradient(135deg, #000000, #b31217, #e52d27, #000000)",
   minHeight: "100vh",
   fontFamily: "Arial, sans-serif",
-  color: "white"
+  color: "white",
 };
 
 
@@ -106,6 +106,7 @@ class App extends Component {
             path="/history"
             element={<History todos={this.state.allTodos} onDelete={this.onDeleteHistory} />}
           />
+
         </Routes>
 
         <Footer />

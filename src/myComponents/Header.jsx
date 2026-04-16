@@ -9,7 +9,8 @@ const headerStyles = {
     color: "white",
     padding: "15px",
     boxShadow: "0 4px 10px rgba(255,0,0,0.5)",
-    position: "relative"
+    position: "relative",
+    border: "1px solid aquawhite"
   },
   brand: {
     color: "orange",

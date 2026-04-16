@@ -4,11 +4,12 @@ import TodoItem from "./Todoitem";
 // 🎨 Inline style objects
 const todosStyles = {
   container: {
-    margin: "30px 30px 30px 30px",
+    margin: "30px 40px 30px 40px",
     padding: "20px",
     backgroundColor: "rgba(0,0,0,0.4)",
     borderRadius: "10px",
-    boxShadow: "0 0 15px rgba(255,69,0,0.6)"
+    boxShadow: "0 0 15px rgba(255,69,0,0.6)",
+    // marginBottom: "80px"
   },
   heading: {
     textAlign: "center",
@@ -42,6 +43,9 @@ class Todos extends Component {
             />
           ))
         )}
+        <h3 style={todosStyles.heading}>Todos List</h3>
+        <h3 style={todosStyles.heading}>Todos List</h3>
+        <h3 style={todosStyles.heading}>Todos List</h3>
       </div>
     );
   }

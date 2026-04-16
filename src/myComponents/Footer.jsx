@@ -3,15 +3,15 @@ import { Component } from "react";
 // 🎨 Inline style objects
 const footerStyles = {
   footer: {
-  backgroundColor: "rgba(0,0,0,0.85)",   // corrected alpha value
+  backgroundColor: "rgba(0,0,0,10)",   // corrected alpha value
   color: "white",
   padding: "15px 0",
   textAlign: "center",
   boxShadow: "0 -4px 10px rgba(255,0,0,0.5)",
-  position: "fixed",     // stick to viewport
+  // position: "fixed",     // stick to viewport
   bottom: 0,             // align at bottom
   left: 0,
-  width: "100%"          // span full width
+  width: "100%",          // span full width
 },
   text: {
     margin: 0,
