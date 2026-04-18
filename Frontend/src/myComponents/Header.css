@@ -1,0 +1,65 @@
+/* ── Header / Navbar ── */
+.header-nav {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5);
+}
+
+.header-brand {
+  color: orange;
+  font-weight: bold;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.header-link {
+  color: white;
+  font-weight: 500;
+  margin-right: 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.header-link:hover {
+  color: orange;
+}
+
+.header-search-input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.header-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.header-search-btn {
+  margin-left: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.header-search-btn:hover {
+  transform: scale(1.05);
+}
+
+.header-toggler {
+  border-radius: 6px;
+  padding: 6px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+}
+
+.header-toggler-icon {
+  filter: invert(1);
+  border-radius: 4px;
+}

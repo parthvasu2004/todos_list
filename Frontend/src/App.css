@@ -1,0 +1,16 @@
+/* ── Global Reset & Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── App Root ── */
+.app-root {
+  background: linear-gradient(135deg, #000000, #b31217, #e52d27, #000000);
+  min-height: 100vh;
+  font-family: Monospace, monospace;
+  color: white;
+}

@@ -1,0 +1,23 @@
+/* ── History Container ── */
+.history-container {
+  margin: 30px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
+  margin-bottom: 600px;
+}
+
+.history-heading {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: orange;
+  margin-bottom: 20px;
+}
+
+.history-empty {
+  text-align: center;
+  color: lightgray;
+  font-style: italic;
+}

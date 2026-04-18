@@ -1,0 +1,71 @@
+/* ── Todo Card ── */
+.todo-card {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #e52d27;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 30px 30px 0 30px;
+  color: white;
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.todo-card--hovered {
+  transform: scale(1.05);
+}
+
+.todo-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: orange;
+  margin-bottom: 10px;
+}
+
+.todo-desc {
+  font-size: 14px;
+  color: lightgray;
+  margin-bottom: 15px;
+}
+
+/* ── Buttons ── */
+.btn-delete {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn-delete:hover {
+  transform: scale(1.05);
+}
+
+.btn-edit {
+  background-color: orange;
+  color: black;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 7px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn-edit:hover {
+  transform: scale(1.05);
+}
+
+/* ── Edit mode inputs ── */
+.todo-input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid orange;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}

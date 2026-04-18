@@ -1,0 +1,59 @@
+/* ── Add Todo Form ── */
+.addtodo-container {
+  margin: 30px 40px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
+}
+
+.addtodo-heading {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: orange;
+  margin-bottom: 20px;
+}
+
+.addtodo-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.addtodo-label {
+  color: orange;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.addtodo-input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid orange;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.addtodo-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.addtodo-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform 0.2s ease-in-out;
+  display: block;
+  margin: 0 auto;
+}
+
+.addtodo-btn:hover {
+  transform: scale(1.05);
+}
