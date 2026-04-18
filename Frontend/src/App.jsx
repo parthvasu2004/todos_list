@@ -81,7 +81,7 @@ class App extends Component {
       <Routes>
 
         {/* Login — no Header or Footer */}
-        
+        <Route path="/login" element={<AuthForm />} />
 
         {/* Home */}
         <Route path="/"
