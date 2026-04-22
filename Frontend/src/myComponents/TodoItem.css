@@ -45,6 +45,7 @@
 }
 
 .btn-edit {
+  margin-top: 10px;
   background-color: orange;
   color: black;
   border: none;
